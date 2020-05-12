@@ -42,6 +42,9 @@
     <!-- Nuestro CSS Compilado a través de SASS ó sin compilar solo CSS básico -->
     <link rel="stylesheet" href="css/estilos.css" />
     
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
   </head>
   <body>
     <header>
@@ -76,7 +79,7 @@
         *
       -->
 
-      Hola mundo!
+     
       
           <section>
             <!--
@@ -92,6 +95,25 @@
              * Bloque ARTICLE
              *
             -->
+
+            <h1>
+              Hola mundo!
+            </h1>
+
+            <p>Vamos a jugar!</p>
+            <form>
+              <div>
+              <label for='numero_elegido1'>Elige un numero entre 1 y 9:</label>
+              <input type="number" id="numero_elegido1" value="" name="numero_elegido1" min="1" max="9" required>
+            </div>
+            <div>
+              <label for='numero_elegido2'>Elige otro numero entre 1 y 9:</label>
+              <input type="number" id="numero_elegido2" value="" name="numero_elegido2" min="1" max="9" required>
+            </div>
+                <input type="button" onclick="calcular()" id="boton" value="calcular mi numero de suerte">
+            </form>
+
+            <p id="resultado">Resultado:</p>
           </article>
       
     </main>
