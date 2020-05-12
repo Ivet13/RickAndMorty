@@ -37,14 +37,14 @@
     />
 
     <!-- Nuestro Framework de CSS preferido, mi preferido es BULMA -->
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />    
-    
-    <!-- Nuestro CSS Compilado a través de SASS ó sin compilar solo CSS básico -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    
-    <!-- JS -->
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
 
+    <!-- Nuestro CSS Compilado a través de SASS ó sin compilar solo CSS básico -->
+    <link rel="stylesheet" href="css/estilos.css?v7" />
+
+    <!-- JS -->
+    <script src="js/script.js?v9
+    "></script>
   </head>
   <body>
     <header>
@@ -53,23 +53,22 @@
         * Bloque HEADER
         *
       -->
-           <figure id="logo">
-            <!--
+      <figure id="logo">
+        <!--
              *
              * Bloque LOGO
              *
             -->
-                <img src="" alt="">
-           </figure>
-      
-           <nav id="navegacionPrincipal">
-            <!--
+        <img src="" alt="" />
+      </figure>
+
+      <nav id="navegacionPrincipal">
+        <!--
              *
              * Bloque Links de Navegación Principal
              *
             -->
-          </nav>
-      
+      </nav>
     </header>
 
     <main>
@@ -79,43 +78,45 @@
         *
       -->
 
-     
-      
-          <section>
-            <!--
+      <section>
+        <!--
              *
              * Bloque SECTION
              *
             -->
-          </section>
-      
-          <article>
-            <!--
+      </section>
+
+      <article>
+        <!--
              *
              * Bloque ARTICLE
              *
             -->
 
-            <h1>
-              Hola mundo!
-            </h1>
+        <h1>
+          Hola mundo!
+        </h1>
 
-            <p>Vamos a jugar!</p>
-            <form>
-              <div>
-              <label for='numero_elegido1'>Elige un numero entre 1 y 9:</label>
-              <input type="number" id="numero_elegido1" value="" name="numero_elegido1" min="1" max="9" required>
-            </div>
-            <div>
-              <label for='numero_elegido2'>Elige otro numero entre 1 y 9:</label>
-              <input type="number" id="numero_elegido2" value="" name="numero_elegido2" min="1" max="9" required>
-            </div>
-                <input type="button" onclick="calcular()" id="boton" value="calcular mi numero de suerte">
-            </form>
+        <p>Vamos a jugar!</p>
+        <form>
+          <div>
+            <label for="loteria_elegida">Elige una loteria:</label>
+            <select id="loteria_elegida" name="loteria_elegida">
+              <option value="euromillones">Euromillones</option>
+              <option value="eurojackpot">Eurojackpot</option>
+            </select>
+          </div>
 
-            <p id="resultado">Resultado:</p>
-          </article>
-      
+          <input
+            type="button"
+            onclick="calcular()"
+            id="boton"
+            value="calcular mis numeros de suerte"
+          />
+        </form>
+        <h2>Te tocara la loteria con los siguientes numeros:</h2>
+        <div class="resultados" id="resultado"></div>
+      </article>
     </main>
 
     <footer>

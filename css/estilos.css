@@ -1,5 +1,5 @@
 *{
-    background-color: peru;
+    background-color: pink;
     color:grey;
     font-size: xx-large;
     text-transform: uppercase;
@@ -7,6 +7,21 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div{
-padding:2rem;
+.resultados{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.resultados p{
+    border: 1px solid grey;
+    width:50px;
+    padding:2%;
+    
+}
+
+input[type="button"]{
+    margin: 2%;
+    padding: 3%;
 }
