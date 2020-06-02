@@ -1,50 +1,24 @@
 'use strict'
+/* RICK AND MORTY */
 
-function calcular () {
-  const loteriaElegida = document.getElementById('loteria_elegida').value
-  console.log(loteriaElegida)
-  switch (loteriaElegida) {
-    case 'euromillones':
-      euromillones()
-      break
-    case 'eurojackpot':
-      eurojackpot()
-      break
-  }
+// mediante constantes guardamos la ruta de la API igual que la ruta para llegar a los objetos tipo "character"
+const API_URL = 'https://rickandmortyapi.com/api/'
+const CHARACTER_URL = 'character/:id'
+
+// esta constane es para jQuery - elegimos la opcion de que los recursos se encuentren fuera de la memoria local
+const OPCIONES = { crossDomain: true }
+
+// esta funcion servira de la funcion callback, es una funcion expresiva, que guardamos en una constane
+const PERSONAJE = function (personaje) {
+  document.write(`Hola mi nombre es ${personaje.name}, 
+  mi especie es ${personaje.species}, soy originario de ${personaje.origin.name}.${'<br></br>'}`)
 }
 
-function euromillones () {
-  const resultados = document.getElementById('resultado')
-  const tieneResultados = document.getElementById('resultado').hasChildNodes()
-  if (tieneResultados) {
-    while (resultados.firstChild) {
-      resultados.removeChild(resultados.firstChild)
-    }
-  }
-  for (let i = 0; i < 7; i++) {
-    console.log('som v for')
-    const resultado = document.getElementById('resultado')
-    const numeroNuevo = document.createElement('p')
-    numeroNuevo.innerHTML = Math.floor(Math.random() * 35) + 1
-
-    resultado.appendChild(numeroNuevo)
-  }
+// la funcion get de la libreria jQuery, le pasamos los argumentos (la ruta, opciones y la funcion de callback, llamada "personaje")
+function pedirPersonaje (id) {
+  const URL = `${API_URL}${CHARACTER_URL.replace(':id', id)}`
+  $.get(URL, OPCIONES, PERSONAJE)
 }
 
-function eurojackpot () {
-  const resultados = document.getElementById('resultado')
-  const tieneResultados = document.getElementById('resultado').hasChildNodes()
-  if (tieneResultados) {
-    while (resultados.firstChild) {
-      resultados.removeChild(resultados.firstChild)
-    }
-  }
-  for (let i = 0; i < 5; i++) {
-    console.log('som v for')
-    const resultado = document.getElementById('resultado')
-    const numeroNuevo = document.createElement('p')
-    numeroNuevo.innerHTML = Math.floor(Math.random() * 50) + 1
-
-    resultado.appendChild(numeroNuevo)
-  }
-}
+// y aqui pedimos al usuario un prompt que entre un numero de ID
+pedirPersonaje(prompt('Elige el ID del caracter cuyas propiedades quieres mostrar:'))
